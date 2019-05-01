@@ -1,5 +1,7 @@
 import React from "react"
 import PostLink from "../components/post-link"
+import Header from "../components/header"
+import Container from "../components/container"
 
 const IndexPage = ({
   data: {
@@ -10,7 +12,14 @@ const IndexPage = ({
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
-  return <div>{Posts}</div>
+  return (
+    <Container>
+      <div>
+        <Header text="About" />
+        {Posts}
+      </div>
+    </Container>
+  )
 }
 
 export default IndexPage
