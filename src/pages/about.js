@@ -1,8 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export default () => (
   <Layout>
+    <SEO title="About" keywords={[`about`, `contact`, `me`, `river`]} />
     <h1>About me</h1>
     <p>
       Hey there, it looks like you’ve found my blog! I’m a software engineer
