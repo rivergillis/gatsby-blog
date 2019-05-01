@@ -1,5 +1,6 @@
 backend:
-  name: gatsby-blog
+  name: github
+  repo: rivergillis/gatsby-blog
 
 media_folder: static/assets
 public_folder: assets
