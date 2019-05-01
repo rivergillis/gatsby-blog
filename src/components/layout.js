@@ -1,14 +1,8 @@
 import React from "react"
-import { useStaticQuery, Link, graphql } from "gatsby"
-import styles from "./layout.module.css"
+import { useStaticQuery, graphql } from "gatsby"
+import { css } from "@emotion/core"
+import Header from "./header"
 
-const ListLink = props => (
-  <li>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
-
-// Used for global CSS
 export default ({ children }) => {
   const data = useStaticQuery(
     graphql`
@@ -22,18 +16,17 @@ export default ({ children }) => {
     `
   )
   return (
-    <div>
-      <div id="outer-container" className={styles.container}>
-        <header className={styles.header}>
-          <Link to="/" className={styles.logoLink}>
-            <h3>{data.site.siteMetadata.title}</h3>
-          </Link>
-          <ul className={styles.headerList}>
-            <ListLink to="/about/">About</ListLink>
-          </ul>
-        </header>
-        {children}
-      </div>
+    <div
+      id="outer-container"
+      css={css`
+        margin: 3rem auto;
+        max-width: 650px;
+        padding-left: 1.3em;
+        padding-right: 1.3em;
+      `}
+    >
+      <Header data={data} />
+      {children}
     </div>
   )
 }
