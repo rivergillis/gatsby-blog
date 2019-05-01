@@ -5,7 +5,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   // Create slugs for each markdown file as they are loaded, and attach them to the nodes.
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = "/blog" + createFilePath({ node, getNode })
+    // console.log(node)
+    console.log(node.frontmatter.verb || "and-writes")
+    // console.log(getNode(node))
+    const slug = `/${node.frontmatter.verb || "and-writes"}${createFilePath({
+      node,
+      getNode,
+    })}`
+    console.log(slug)
     createNodeField({
       node,
       name: `slug`,
@@ -29,6 +36,9 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             fields {
               slug
+            }
+            frontmatter {
+              verb
             }
           }
         }

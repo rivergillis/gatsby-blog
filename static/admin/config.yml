@@ -13,4 +13,9 @@ collections:
     fields:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
+      - label: "URL Verb"
+        name: "verb"
+        widget: "select"
+        default: "and-writes"
+        options: ["and-writes", "and-travels", "a"]
       - { name: body, label: Body, widget: markdown }

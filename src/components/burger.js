@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { slide as Menu } from "react-burger-menu"
 
-// This is broken :()
+// This is broken :(
 
 const burgerStyle = {
   bmBurgerButton: {
