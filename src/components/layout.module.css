@@ -1,0 +1,30 @@
+.container {
+  margin: 3rem auto;
+  max-width: 650px;
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.logoLink {
+  text-shadow: none;
+  background-image: none;
+}
+
+/* The actual logo text */
+.logoLink h3 {
+  display: inline
+}
+
+.headerList {
+  list-style: none;
+  float: right;
+}
+
+.headerList li {
+  display: inline-block;
+  margin-right: 1rem;
+}

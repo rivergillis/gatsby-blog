@@ -1,7 +1,6 @@
 import React from "react"
 import PostLink from "../components/post-link"
-import Header from "../components/header"
-import Container from "../components/container"
+import Layout from "../components/layout"
 
 const IndexPage = ({
   data: {
@@ -13,12 +12,9 @@ const IndexPage = ({
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
   return (
-    <Container>
-      <div>
-        <Header text="About" />
-        {Posts}
-      </div>
-    </Container>
+    <Layout>
+      <div>{Posts}</div>
+    </Layout>
   )
 }
 
