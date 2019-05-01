@@ -22,16 +22,18 @@ export default ({ children }) => {
     `
   )
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
-        <Link to="/" className={styles.logoLink}>
-          <h3>{data.site.siteMetadata.title}</h3>
-        </Link>
-        <ul className={styles.headerList}>
-          <ListLink to="/about/">About</ListLink>
-        </ul>
-      </header>
-      {children}
+    <div>
+      <div id="outer-container" className={styles.container}>
+        <header className={styles.header}>
+          <Link to="/" className={styles.logoLink}>
+            <h3>{data.site.siteMetadata.title}</h3>
+          </Link>
+          <ul className={styles.headerList}>
+            <ListLink to="/about/">About</ListLink>
+          </ul>
+        </header>
+        {children}
+      </div>
     </div>
   )
 }

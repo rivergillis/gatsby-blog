@@ -12,7 +12,10 @@ export default () => (
       graduating from the University of Arkansas. Pretty soon I'll be working on
       something fun at Google. Here’s a picture of me so that you know that I am
       a real person:
-      <img src="/meirl.jpg" alt="River's face with a camera obscuring it" />
+      <img
+        src="/assets/meirl.jpg"
+        alt="River's face with a camera obscuring it"
+      />
     </p>
     <p>Close enough.</p>
     <p>
