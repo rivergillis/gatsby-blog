@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 
 import { css } from "@emotion/core"
-import MenuList from "./MenuList"
+import MenuBurger from "./menu-burger"
 
 const ListLink = props => (
   <li
@@ -73,7 +73,7 @@ class Header extends Component {
             <ListLink to="/contact/">Contact</ListLink>
           </ul>
         )}
-        {this.state.width < 650 && <MenuList />}
+        {this.state.width < 650 && <MenuBurger />}
       </header>
     )
   }

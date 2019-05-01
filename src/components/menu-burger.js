@@ -22,7 +22,7 @@ import { css } from "@emotion/core"
 //   },
 // }))
 
-function MenuListComposition() {
+function MenuBurger() {
   // const classes = useStyles()
   const [open, setOpen] = React.useState(false)
   const anchorEl = React.useRef(null)
@@ -102,4 +102,4 @@ function MenuListComposition() {
   )
 }
 
-export default MenuListComposition
+export default MenuBurger
