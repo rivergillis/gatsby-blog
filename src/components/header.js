@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 
 import { css } from "@emotion/core"
-import MenuListComposition from "./menulist"
+import MenuList from "./MenuList"
 
 const ListLink = props => (
   <li
@@ -61,24 +61,19 @@ class Header extends Component {
           </h3>
         </Link>
 
-        {this.state.width >= 800 && (
+        {this.state.width >= 650 && (
           <ul
             css={css`
               list-style: none;
               float: right;
             `}
           >
-            <ListLink to="/">Home</ListLink>
+            <ListLink to="/">Blog</ListLink>
             <ListLink to="/about/">About</ListLink>
+            <ListLink to="/contact/">Contact</ListLink>
           </ul>
         )}
-        {this.state.width < 800 && (
-          <MenuListComposition
-            css={css`
-              display: inline;
-            `}
-          />
-        )}
+        {this.state.width < 650 && <MenuList />}
       </header>
     )
   }
