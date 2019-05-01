@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `River Gillis`,
+    description: `A collection of River's projects and blog posts`,
+    author: `River Gillis`,
+    siteUrl: "https://river.codes",
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,
@@ -19,5 +22,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-robots-txt`,
   ],
 }

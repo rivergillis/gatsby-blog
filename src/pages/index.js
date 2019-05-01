@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PostItem from "../components/post-item"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const IndexPage = ({
   data: {
@@ -14,6 +15,7 @@ const IndexPage = ({
 
   return (
     <Layout>
+      <SEO title="Home" keywords={[`blog`, `index`, `list`, `software`]} />
       <p>
         Hey you've found my site! I write about software and whatever else comes
         to mind. Below are the latest <b>blog posts</b>. I'll add my{" "}
