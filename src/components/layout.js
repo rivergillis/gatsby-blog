@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 import styles from "./layout.module.css"
 
 const ListLink = props => (
@@ -9,17 +9,30 @@ const ListLink = props => (
 )
 
 // Used for global CSS
-export default ({ children }) => (
-  <div className={styles.container}>
-    <header className={styles.header}>
-      <Link to="/" className={styles.logoLink}>
-        <h3>River's Blog</h3>
-      </Link>
-      <ul className={styles.headerList}>
-        <ListLink to="/about/">About</ListLink>
-        <ListLink to="/contact/">Contact</ListLink>
-      </ul>
-    </header>
-    {children}
-  </div>
-)
+export default ({ children }) => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
+  return (
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <Link to="/" className={styles.logoLink}>
+          <h3>{data.site.siteMetadata.title}</h3>
+        </Link>
+        <ul className={styles.headerList}>
+          <ListLink to="/about/">About</ListLink>
+          <ListLink to="/contact/">Contact</ListLink>
+        </ul>
+      </header>
+      {children}
+    </div>
+  )
+}

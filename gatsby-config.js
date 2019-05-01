@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    title: `River Gillis`,
+  },
   plugins: [
     `gatsby-plugin-netlify-cms`,
     {
@@ -15,5 +18,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-emotion`,
   ],
 }

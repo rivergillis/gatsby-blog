@@ -1,5 +1,6 @@
 import Typography from "typography"
 import fairyGateTheme from "typography-theme-fairy-gates"
+// import kirkham from "typography-theme-kirkham"
 
 const typography = new Typography(fairyGateTheme)
 

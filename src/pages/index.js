@@ -1,5 +1,5 @@
 import React from "react"
-import PostLink from "../components/post-link"
+import PostItem from "../components/post-item"
 import Layout from "../components/layout"
 
 const IndexPage = ({
@@ -9,7 +9,7 @@ const IndexPage = ({
 }) => {
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+    .map(edge => <PostItem key={edge.node.id} post={edge.node} />)
 
   return (
     <Layout>
