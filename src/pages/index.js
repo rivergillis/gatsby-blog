@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import PostItem from "../components/post-item"
 import Layout from "../components/layout"
 
@@ -13,6 +14,11 @@ const IndexPage = ({
 
   return (
     <Layout>
+      <p>
+        Hey you've found my site! I write about software and whatever else comes
+        to mind. Below are the latest <b>blog posts</b>. I'll add my{" "}
+        <b>projects</b> in a few days.
+      </p>
       <div>{Posts}</div>
     </Layout>
   )
@@ -29,8 +35,10 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 250)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
-            path
             title
+          }
+          fields {
+            slug
           }
         }
       }

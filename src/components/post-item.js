@@ -5,7 +5,7 @@ import { rhythm } from "../utils/typography"
 
 const PostItem = ({ post }) => (
   <div>
-    <Link to={post.frontmatter.path}>
+    <Link to={post.fields.slug}>
       <h3
         css={css`
           margin-bottom: ${rhythm(1 / 4)};

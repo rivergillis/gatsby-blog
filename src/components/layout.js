@@ -29,7 +29,6 @@ export default ({ children }) => {
         </Link>
         <ul className={styles.headerList}>
           <ListLink to="/about/">About</ListLink>
-          <ListLink to="/contact/">Contact</ListLink>
         </ul>
       </header>
       {children}
