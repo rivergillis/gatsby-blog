@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
+import "./layout.css"
 import Header from "./header"
 
 export default ({ children }) => {

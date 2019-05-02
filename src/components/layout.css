@@ -1,0 +1,25 @@
+
+/* Change this if you change the theme */
+.gatsby-highlight {
+  background-color: #2C2C2C;
+  border-radius: 0.2em;
+  margin: 0.2em 0;
+  padding: 1em;
+  overflow: auto;
+  font-size: smaller;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: initial;
+}
