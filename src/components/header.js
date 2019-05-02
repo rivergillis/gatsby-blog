@@ -19,7 +19,7 @@ class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      width: 0,
+      width: 900,
     }
   }
 
