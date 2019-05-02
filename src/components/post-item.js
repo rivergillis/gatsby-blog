@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import CalendarToday from "@material-ui/icons/CalendarToday"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const PostItem = ({ post }) => (
   <div>
@@ -21,12 +21,7 @@ const PostItem = ({ post }) => (
           margin-bottom: ${rhythm(1 / 4)};
         `}
       >
-        <CalendarToday
-          css={css`
-            vertical-align: text-bottom;
-          `}
-        />{" "}
-        {post.frontmatter.date}
+        <FontAwesomeIcon icon="calendar-day" /> {post.frontmatter.date}
       </h5>
       <p
         css={css`

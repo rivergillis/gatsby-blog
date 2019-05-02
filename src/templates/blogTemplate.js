@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import AccessTimeIcon from "@material-ui/icons/AccessTime"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
@@ -33,12 +33,7 @@ export default function Template({
               color: #666;
             `}
           >
-            <AccessTimeIcon
-              css={css`
-                vertical-align: text-bottom;
-              `}
-            />{" "}
-            {timeToRead} minute read
+            <FontAwesomeIcon icon="clock" /> {timeToRead} minute read
           </h6>
           <div
             className="blog-post-content"

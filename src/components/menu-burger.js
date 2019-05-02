@@ -1,5 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import IconButton from "@material-ui/core/IconButton"
 import ClickAwayListener from "@material-ui/core/ClickAwayListener"
 import Grow from "@material-ui/core/Grow"
@@ -7,7 +8,6 @@ import Paper from "@material-ui/core/Paper"
 import Popper from "@material-ui/core/Popper"
 import MenuItem from "@material-ui/core/MenuItem"
 import MenuList from "@material-ui/core/MenuList"
-import MenuIcon from "@material-ui/icons/Menu"
 import { css } from "@emotion/core"
 
 // import { makeStyles } from "@material-ui/styles"
@@ -54,7 +54,7 @@ function MenuBurger() {
         onClick={handleToggle}
         aria-label="Menu button"
       >
-        <MenuIcon />
+        <FontAwesomeIcon icon="bars" />
       </IconButton>
       <Popper open={open} anchorEl={anchorEl.current} transition disablePortal>
         {({ TransitionProps, placement }) => (
