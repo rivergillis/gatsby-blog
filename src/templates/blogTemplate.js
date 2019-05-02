@@ -50,6 +50,7 @@ export default function Template({
             float: left;
             margin-right: 15px;
             width: 180px;
+            margin-bottom: 0px;
           `}
         />
         <b>River Gillis</b> is a software engineer with experience in systems
