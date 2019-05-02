@@ -1,4 +1,5 @@
 import React from "react"
+import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -8,13 +9,19 @@ export default () => (
     <h1>About me</h1>
     <p>
       Hey there, it looks like you’ve found my blog! I’m a software engineer
-      with experience in graphics and systems engineering. Right now I’m
-      graduating from the University of Arkansas. Pretty soon I'll be working on
-      something fun at Google. Here’s a picture of me so that you know that I am
-      a real person:
+      with experience in systems engineering, graphics, and full-stack web
+      development. Right now I’m graduating from the University of Arkansas.
+      Pretty soon I'll be working on something fun at Google. Here’s a picture
+      of me so that you know that I am a real person:
       <img
         src="/assets/meirl.jpg"
         alt="River's face with a camera obscuring it"
+        css={css`
+          display: block;
+          margin: auto;
+          padding-top: 1em;
+          width: 70%;
+        `}
       />
     </p>
     <p>Close enough.</p>
