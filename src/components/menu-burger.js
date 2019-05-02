@@ -52,6 +52,7 @@ function MenuBurger() {
         aria-owns={open ? "menu-list-grow" : undefined}
         aria-haspopup="true"
         onClick={handleToggle}
+        aria-label="Menu button"
       >
         <MenuIcon />
       </IconButton>

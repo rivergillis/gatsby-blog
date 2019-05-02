@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import CalendarToday from "@material-ui/icons/CalendarToday"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
 
@@ -12,14 +13,21 @@ const PostItem = ({ post }) => (
         `}
       >
         {post.frontmatter.title}{" "}
-        <span
-          css={css`
-            color: #bbb;
-          `}
-        >
-          — {post.frontmatter.date}
-        </span>
       </h3>
+      <h5
+        css={css`
+          color: #666;
+          margin-top: 0px;
+          margin-bottom: ${rhythm(1 / 4)};
+        `}
+      >
+        <CalendarToday
+          css={css`
+            vertical-align: text-bottom;
+          `}
+        />{" "}
+        {post.frontmatter.date}
+      </h5>
       <p
         css={css`
           color: #171717;

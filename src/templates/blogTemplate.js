@@ -1,5 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
+import AccessTimeIcon from "@material-ui/icons/AccessTime"
+import { css } from "@emotion/core"
+import { rhythm } from "../utils/typography"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -17,9 +20,26 @@ export default function Template({
       <div className="blog-post-container">
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
-          <h2>
-            {frontmatter.date} - {timeToRead} minute read
+          <h2
+            css={css`
+              margin-top: ${rhythm(1 / 2)};
+            `}
+          >
+            {frontmatter.date}
           </h2>
+          <h6
+            css={css`
+              margin-top: ${rhythm(1 / 4)};
+              color: #666;
+            `}
+          >
+            <AccessTimeIcon
+              css={css`
+                vertical-align: text-bottom;
+              `}
+            />{" "}
+            {timeToRead} minute read
+          </h6>
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
