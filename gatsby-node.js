@@ -5,9 +5,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   // Create slugs for each markdown file as they are loaded, and attach them to the nodes.
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
-    // console.log(node)
-    console.log(node.frontmatter.verb || "and-writes")
-    // console.log(getNode(node))
     const slug = `/${node.frontmatter.verb || "and-writes"}${createFilePath({
       node,
       getNode,

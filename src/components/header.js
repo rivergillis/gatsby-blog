@@ -19,7 +19,7 @@ class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      width: 0,
+      width: 530,
     }
   }
 
@@ -61,7 +61,7 @@ class Header extends Component {
           </h3>
         </Link>
 
-        {this.state.width >= 650 && (
+        {this.state.width >= 530 && (
           <ul
             css={css`
               list-style: none;
@@ -69,11 +69,12 @@ class Header extends Component {
             `}
           >
             <ListLink to="/">Blog</ListLink>
+            <ListLink to="/">Projects</ListLink>
             <ListLink to="/about/">About</ListLink>
             <ListLink to="/contact/">Contact</ListLink>
           </ul>
         )}
-        {this.state.width < 650 && <MenuBurger />}
+        {this.state.width < 530 && <MenuBurger />}
       </header>
     )
   }

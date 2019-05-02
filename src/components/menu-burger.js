@@ -80,6 +80,14 @@ function MenuBurger() {
                   <MenuItem
                     onClick={() => {
                       setOpen(false)
+                      navigate("/")
+                    }}
+                  >
+                    Projects
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      setOpen(false)
                       navigate("/about")
                     }}
                   >
