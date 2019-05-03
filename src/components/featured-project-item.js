@@ -9,9 +9,10 @@ const FeaturedProjectItem = ({ project }) => (
       padding: 20px;
       margin-left: 5px;
       margin-right: 5px;
-      width: 189px;
-      height: 150px;
-      line-height: 120px;
+      min-width: 100px;
+      max-width: 189px;
+      flex: 1;
+      line-height: 70px;
       box-shadow: 0 0 0 1pt black;
       margin-bottom: 20px;
     `}
@@ -23,7 +24,7 @@ const FeaturedProjectItem = ({ project }) => (
         background-image: none;
       `}
     >
-      <h3
+      <h4
         css={css`
           margin-top: 0px;
           display: inline-block;
@@ -34,13 +35,15 @@ const FeaturedProjectItem = ({ project }) => (
           word-break: break-word;
           line-height: 1em;
           max-height: 4em;
+          margin: 0;
+          padding: 0;
           &:hover {
             color: #1e74ff;
           }
         `}
       >
         {project.frontmatter.title}
-      </h3>
+      </h4>
     </Link>
   </div>
 )
