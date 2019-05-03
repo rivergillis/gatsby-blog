@@ -46,7 +46,7 @@ const IndexPage = ({
         Hey you've found my site! I write about software and whatever else comes
         to mind. Below are some{" "}
         <b>
-          featured <Link to="projects">projects</Link>
+          featured <Link to="/projects/">projects</Link>
         </b>
         , followed by the latest <b>blog posts</b>.
       </p>

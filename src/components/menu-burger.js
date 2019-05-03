@@ -27,17 +27,14 @@ function MenuBurger() {
   const [open, setOpen] = React.useState(false)
   const anchorEl = React.useRef(null)
 
-  // TODO: Fix this somehow?
   function handleToggle() {
     setOpen(!open)
-    console.log(open)
   }
 
   function handleClose(event) {
-    // if (anchorEl.current.contains(event.target)) {
-    //   return
-    // }
-    console.log(open)
+    if (anchorEl.current.contains(event.target)) {
+      return
+    }
     setOpen(false)
   }
 
@@ -66,7 +63,11 @@ function MenuBurger() {
                 placement === "bottom" ? "center top" : "center bottom",
             }}
           >
-            <Paper>
+            <Paper
+              css={css`
+                margin-right: 50px;
+              `}
+            >
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList>
                   <MenuItem
