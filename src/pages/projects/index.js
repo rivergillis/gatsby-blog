@@ -18,7 +18,7 @@ const ProjectIndexPage = ({
   return (
     <Layout>
       <SEO title="Home" keywords={[`blog`, `index`, `list`, `software`]} />
-      <p>Projects!</p>
+      <h1>Projects</h1>
       <div>{Projects}</div>
     </Layout>
   )
