@@ -1,5 +1,6 @@
 ---
 path: /blog/path-to-blogpost
+author: River Gillis
 date: 2019-05-01T00:11:55.199Z
 title: Blog post with formatting
 ---

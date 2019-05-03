@@ -11,12 +11,13 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html, timeToRead } = markdownRemark
+  const { frontmatter, html, timeToRead, fields } = markdownRemark
   return (
     <Layout>
       <SEO
         title={frontmatter.title}
         keywords={[`software`, `games`, `video`, `graphics`, `travel`]}
+        slug={fields.slug}
       />
       <div className="blog-post-container">
         <div className="blog-post">
@@ -66,6 +67,9 @@ export const pageQuery = graphql`
         title
       }
       timeToRead
+      fields {
+        slug
+      }
     }
     meirl: file(relativePath: { eq: "meirl.jpg" }) {
       childImageSharp {

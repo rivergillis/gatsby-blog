@@ -11,7 +11,7 @@ export default function ProjectTemplate({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, fields } = markdownRemark
   return (
     <ProjectLayout>
       <SEO
@@ -27,6 +27,7 @@ export default function ProjectTemplate({
           `project`,
           `workshop`,
         ]}
+        slug={fields.slug}
       />
       <div className="blog-post-container">
         <div className="blog-post">
@@ -86,6 +87,9 @@ export const pageQuery = graphql`
         title
       }
       timeToRead
+      fields {
+        slug
+      }
     }
     meirl: file(relativePath: { eq: "meirl.jpg" }) {
       childImageSharp {

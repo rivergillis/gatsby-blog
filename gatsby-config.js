@@ -2,7 +2,7 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: `River Gillis`,
+    title: `River's Blog`,
     description: `A collection of River's projects and blog posts`,
     author: `River Gillis`,
     siteUrl: "https://river.codes",
@@ -66,6 +66,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-social-cards`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-responsive-iframe`,
           {

@@ -20,7 +20,7 @@ config.autoAddCss = false
 // add to fa lib
 library.add([faCalendarDay, faStroopwafel, faClock, faBars])
 
-export default ({ children }) => {
+export default ({ slug, children }) => {
   const data = useStaticQuery(
     graphql`
       query {

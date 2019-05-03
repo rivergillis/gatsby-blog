@@ -1,6 +1,7 @@
 ---
 date: 2019-05-02T01:26:14.876Z
 title: Blog Post with Code
+author: River Gillis
 verb: and-writes
 ---
 here is some code
