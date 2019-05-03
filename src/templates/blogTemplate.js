@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import Layout from "../components/layout"
+import Layout from "../layouts/layout"
 import SEO from "../components/seo"
 
 export default function Template({
@@ -19,17 +19,26 @@ export default function Template({
       />
       <div className="blog-post-container">
         <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2
+          <h1
             css={css`
-              margin-top: ${rhythm(1 / 2)};
+              margin-bottom: ${rhythm(1 / 4)};
             `}
           >
-            {frontmatter.date}
-          </h2>
+            {frontmatter.title}
+          </h1>
           <h6
             css={css`
               margin-top: ${rhythm(1 / 4)};
+              margin-bottom: ${rhythm(1 / 4)};
+              color: #666;
+            `}
+          >
+            <FontAwesomeIcon icon="calendar-day" /> Posted on {frontmatter.date}
+          </h6>
+          <h6
+            css={css`
+              margin-top: ${rhythm(1 / 4)};
+              margin-bottom: ${rhythm(1 / 4)};
               color: #666;
             `}
           >

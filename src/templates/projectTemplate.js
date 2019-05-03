@@ -3,33 +3,53 @@ import { graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { css } from "@emotion/core"
 import { rhythm } from "../utils/typography"
-import Layout from "../components/layout"
+import ProjectLayout from "../layouts/projectLayout"
 import SEO from "../components/seo"
 
-export default function Template({
+export default function ProjectTemplate({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html, timeToRead } = markdownRemark
   return (
-    <Layout>
+    <ProjectLayout>
       <SEO
         title={frontmatter.title}
-        keywords={[`software`, `games`, `video`, `graphics`, `travel`]}
+        keywords={[
+          `software`,
+          `games`,
+          `video`,
+          `graphics`,
+          `coding`,
+          `arduino`,
+          `programming`,
+          `project`,
+          `workshop`,
+        ]}
       />
       <div className="blog-post-container">
         <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2
+          <h1
             css={css`
-              margin-top: ${rhythm(1 / 2)};
+              margin-bottom: ${rhythm(1 / 4)};
             `}
           >
-            {frontmatter.date}
-          </h2>
+            {frontmatter.title}
+          </h1>
           <h6
             css={css`
               margin-top: ${rhythm(1 / 4)};
+              margin-bottom: ${rhythm(1 / 4)};
+              color: #666;
+            `}
+          >
+            <FontAwesomeIcon icon="calendar-day" /> Last updated on{" "}
+            {frontmatter.date}
+          </h6>
+          <h6
+            css={css`
+              margin-top: ${rhythm(1 / 4)};
+              margin-bottom: ${rhythm(1 / 4)};
               color: #666;
             `}
           >
@@ -61,7 +81,7 @@ export default function Template({
         <a href="https://www.instagram.com/therivergillis/">Instagram</a>, and
         probably other places if you look hard enough.
       </div>
-    </Layout>
+    </ProjectLayout>
   )
 }
 

@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import { css } from "@emotion/core"
 import PostItem from "../components/post-item"
 import FeaturedProjectItem from "../components/featured-project-item"
-import Layout from "../components/layout"
+import Layout from "../layouts/layout"
 import SEO from "../components/seo"
 
 const IndexPage = ({

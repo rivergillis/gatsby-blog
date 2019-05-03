@@ -47,6 +47,7 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   const blogPostTemplate = path.resolve(`./src/templates/blogTemplate.js`)
+  const projectTempalte = path.resolve(`./src/templates/projectTemplate.js`)
 
   return graphql(`
     {
@@ -73,11 +74,21 @@ exports.createPages = ({ actions, graphql }) => {
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       console.log(`creating ${node.fields.slug}`)
-      createPage({
-        path: node.fields.slug,
-        component: blogPostTemplate,
-        context: { slug: node.fields.slug }, // additional data can be passed via context
-      })
+      if (node.fields.collection === "markdown-project") {
+        // Projects use the project template
+        createPage({
+          path: node.fields.slug,
+          component: projectTempalte,
+          context: { slug: node.fields.slug }, // additional data can be passed via context
+        })
+      } else {
+        // Otherwise use the blog template
+        createPage({
+          path: node.fields.slug,
+          component: blogPostTemplate,
+          context: { slug: node.fields.slug }, // additional data can be passed via context
+        })
+      }
     })
   })
 }

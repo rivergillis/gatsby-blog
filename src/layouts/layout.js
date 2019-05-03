@@ -13,7 +13,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import "./layout.css"
-import Header from "./header"
+import Header from "../components/header"
 
 // Prevent fontawesome from dynamically adding its css since we did it manually above
 config.autoAddCss = false

@@ -19,3 +19,11 @@ collections:
         default: "and-writes"
         options: ["and-writes", "and-travels", "a"]
       - { name: body, label: Body, widget: markdown }
+  - name: projects
+    label: Projects
+    folder: projects
+    create: true
+    fields:
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
