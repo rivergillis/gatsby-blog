@@ -1,9 +1,10 @@
 import React from "react"
-import { css } from "@emotion/core"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../layouts/layout"
 import SEO from "../components/seo"
 
-export default () => (
+export default ({ data }) => (
   <Layout>
     <SEO title="About" keywords={[`about`, `contact`, `me`, `river`]} />
     <h1>About me</h1>
@@ -13,16 +14,7 @@ export default () => (
       development. Right now I’m graduating from the University of Arkansas.
       Pretty soon I'll be working on something fun at Google. Here’s a picture
       of me so that you know that I am a real person:
-      <img
-        src="/assets/meirl.jpg"
-        alt="River's face with a camera obscuring it"
-        css={css`
-          display: block;
-          margin: auto;
-          padding-top: 1em;
-          width: 70%;
-        `}
-      />
+      <Img fluid={data.meirl.childImageSharp.fluid} alt="River's face" />
     </p>
     <p>Close enough.</p>
     <p>
@@ -43,3 +35,22 @@ export default () => (
     </p>
   </Layout>
 )
+
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 650) {
+        ...GatsbyImageSharpFluid
+        presentationWidth
+      }
+    }
+  }
+`
+
+export const query = graphql`
+  query {
+    meirl: file(relativePath: { eq: "meirl.jpg" }) {
+      ...fluidImage
+    }
+  }
+`
