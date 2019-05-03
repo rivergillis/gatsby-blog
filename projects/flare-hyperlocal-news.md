@@ -10,4 +10,4 @@ title: Flare - Hyperlocal News
 
 **A paper accompanies this project on** [**Google Docs**](https://docs.google.com/document/d/1ctdwnZqA7WPHCXqPsHSUliZCZieDuvOdvdQNAGs63Xw/edit?usp=sharing)
 
-<iframe width="900" height="563" src="https://www.youtube.com/watch?v=0j5hX_xjGbE" frameborder="0" allowfullscreen></iframe>
+<iframe width="900" height="563" src="https://www.youtube.com/embed/0j5hX_xjGbE" frameborder="0" allowfullscreen></iframe>
