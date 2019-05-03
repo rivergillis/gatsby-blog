@@ -8,7 +8,13 @@ module.exports = {
     siteUrl: "https://river.codes",
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/assets`,
+        name: "assets",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -35,7 +41,23 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [`gatsby-remark-prismjs`, `gatsby-remark-responsive-iframe`],
+        plugins: [
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-responsive-iframe`,
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          `gatsby-remark-copy-linked-files`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 900,
+            },
+          },
+        ],
       },
     },
 
@@ -54,5 +76,6 @@ module.exports = {
         trackingId: "UA-133886314-1",
       },
     },
+    `gatsby-plugin-netlify-cms`,
   ],
 }

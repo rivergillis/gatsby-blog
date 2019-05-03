@@ -34,3 +34,8 @@
   padding-left: 2.8em;
   overflow: initial;
 }
+
+/* This gets rid of the link underlines for image links in markdown */
+.gatsby-resp-image-link {
+  background-image: none;
+}
