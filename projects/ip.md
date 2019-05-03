@@ -1,6 +1,6 @@
 ---
 date: 2019-05-02T01:55:50.127Z
-title: Ip With a really long title that is really long
+title: Flare - Hyperlocal News
 ---
 
 

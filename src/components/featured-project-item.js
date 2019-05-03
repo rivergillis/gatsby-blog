@@ -31,8 +31,12 @@ const FeaturedProjectItem = ({ project }) => (
           overflow: hidden;
           text-overflow: ellipsis;
           word-wrap: break-word;
+          word-break: break-word;
           line-height: 1em;
           max-height: 4em;
+          &:hover {
+            color: #1e74ff;
+          }
         `}
       >
         {project.frontmatter.title}
