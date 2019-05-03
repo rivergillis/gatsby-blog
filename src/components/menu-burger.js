@@ -53,7 +53,15 @@ function MenuBurger() {
       >
         <FontAwesomeIcon icon="bars" />
       </IconButton>
-      <Popper open={open} anchorEl={anchorEl.current} transition disablePortal>
+      <Popper
+        open={open}
+        anchorEl={anchorEl.current}
+        transition
+        disablePortal
+        css={css`
+          z-index: 10;
+        `}
+      >
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}
