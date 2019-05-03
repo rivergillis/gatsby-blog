@@ -11,7 +11,7 @@ export default function ProjectTemplate({
   data, // this prop will be injected by the GraphQL query below.
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html, timeToRead } = markdownRemark
+  const { frontmatter, html } = markdownRemark
   return (
     <ProjectLayout>
       <SEO
@@ -47,7 +47,7 @@ export default function ProjectTemplate({
             <FontAwesomeIcon icon="calendar-day" /> Last updated on{" "}
             {frontmatter.date}
           </h6>
-          <h6
+          {/* <h6
             css={css`
               margin-top: ${rhythm(1 / 4)};
               margin-bottom: ${rhythm(1 / 4)};
@@ -55,14 +55,18 @@ export default function ProjectTemplate({
             `}
           >
             <FontAwesomeIcon icon="clock" /> {timeToRead} minute read
-          </h6>
+          </h6> */}
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
       </div>
-      <hr />
+      <hr
+        css={css`
+          margin-top: 30px;
+        `}
+      />
       <AboutAuthor data={data} />
       <div
         css={css`

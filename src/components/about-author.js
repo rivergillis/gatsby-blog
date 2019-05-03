@@ -15,10 +15,10 @@ export default ({ data }) => (
         margin-bottom: 0px;
       `}
     />
-    <b>River Gillis</b> is a software engineer with experience in systems
-    engineering, graphics, and full-stack web development. Right now he is
-    finishing up his degree before heading to work at Google. You can find him
-    on <a href="https://twitter.com/rivergillis">Twitter</a>,{" "}
+    <b>River Gillis</b> is a software engineer with experience in embedded
+    systems, graphics, and full-stack web development. Right now he is finishing
+    up his degree before heading to work at Google. You can find him on{" "}
+    <a href="https://twitter.com/rivergillis">Twitter</a>,{" "}
     <a href="https://github.com/rivergillis">GitHub</a>,{" "}
     <a href="https://www.instagram.com/therivergillis/">Instagram</a>, and
     probably other places if you look hard enough.

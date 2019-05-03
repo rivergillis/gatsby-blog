@@ -10,7 +10,7 @@ export default ({ data }) => (
     <h1>About me</h1>
     <p>
       Hey there, it looks like you’ve found my blog! I’m a software engineer
-      with experience in systems engineering, graphics, and full-stack web
+      with experience in embedded systems, graphics, and full-stack web
       development. Right now I’m graduating from the University of Arkansas.
       Pretty soon I'll be working on something fun at Google. Here’s a picture
       of me so that you know that I am a real person:
