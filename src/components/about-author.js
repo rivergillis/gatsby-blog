@@ -4,7 +4,6 @@ import { css } from "@emotion/core"
 
 export default ({ data }) => (
   <div id="about-author">
-    {console.log(data)}
     <Img
       fixed={data.meirl.childImageSharp.fixed}
       alt="River's face"

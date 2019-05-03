@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, keywords, title, slug }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -40,6 +41,10 @@ function SEO({ description, lang, meta, keywords, title, slug }) {
           content: metaDescription,
         },
         {
+          property: "og:url",
+          content: `${site.siteMetadata.siteUrl}${slug}`,
+        },
+        {
           property: `og:title`,
           content: title,
         },
@@ -54,9 +59,25 @@ function SEO({ description, lang, meta, keywords, title, slug }) {
         // Add the twitter cards if we passed a slug
         ...(slug
           ? [
+              {
+                itemprop: "image",
+                content: `${site.siteMetadata.siteUrl}${slug}twitter-card.jpg`,
+              },
               { name: "twitter:card", content: "summary_large_image" },
               {
                 name: "twitter:image",
+                content: `${site.siteMetadata.siteUrl}${slug}twitter-card.jpg`,
+              },
+              {
+                property: "og:url",
+                content: `${site.siteMetadata.siteUrl}${slug}`,
+              },
+              {
+                property: "og:url",
+                content: `${site.siteMetadata.siteUrl}${slug}`,
+              },
+              {
+                property: "og:image",
                 content: `${site.siteMetadata.siteUrl}${slug}twitter-card.jpg`,
               },
             ]
