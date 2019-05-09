@@ -14,6 +14,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import "./layout.css"
 import Header from "../components/header"
+import Footer from "../components/footer"
 
 // Prevent fontawesome from dynamically adding its css since we did it manually above
 config.autoAddCss = false
@@ -44,6 +45,7 @@ export default ({ children }) => {
     >
       <Header data={data} />
       {children}
+      <Footer />
     </div>
   )
 }
