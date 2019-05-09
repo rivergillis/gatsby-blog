@@ -70,8 +70,8 @@ module.exports = {
             resolve: `gatsby-remark-social-cards`,
             options: {
               title: {
-                // This is the frontmatter field the title should come from
-                field: "title",
+                // This is the frontmatter field the card title should come from
+                field: "cardTitle",
                 // Currently only supports DejaVuSansCondensed
                 // More fonts coming soon!
                 font: "DejaVuSansCondensed",

@@ -2,6 +2,7 @@
 date: 2019-05-04T01:55:50.127Z
 author: River Gillis
 title: ARteachers Dot Org
+cardTitle: ARteachers Dot Org
 ---
 
 ![Banner for the flare hyperlocal news mobile app](/assets/arteachers-main.png "Hyperlocal news banner")

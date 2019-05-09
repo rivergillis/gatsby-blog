@@ -1,6 +1,7 @@
 ---
 date: 2019-05-09T01:26:14.876Z
 title: Building a Graphics Rendering Loop with React and Typescript
+cardTitle: Building a Graphics Rendering Loop
 author: River Gillis
 verb: and-writes
 ---

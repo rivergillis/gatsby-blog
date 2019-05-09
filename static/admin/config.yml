@@ -13,6 +13,7 @@ collections:
     fields:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
+      - { name: cardTitle, label: Social Card Title }
       - label: "URL Verb"
         name: "verb"
         widget: "select"
@@ -26,4 +27,5 @@ collections:
     fields:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
+      - { name: cardTitle, label: Social Card Title }
       - { name: body, label: Body, widget: markdown }

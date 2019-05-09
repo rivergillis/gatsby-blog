@@ -2,6 +2,7 @@
 date: 2019-05-03T02:13:22.836Z
 author: River Gillis
 title: Flare - Hyperlocal News
+cardTitle: Flare - Hyperlocal News
 ---
 ![Banner for the flare hyperlocal news mobile app](/assets/screen-shot-2019-05-02-at-9.20.18-pm.png "Hyperlocal news banner")
 

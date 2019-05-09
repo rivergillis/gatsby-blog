@@ -2,6 +2,7 @@
 path: /blog/lorum-ipsum
 date: 2019-05-01T01:55:50.127Z
 title: Lorum Ipsum
+cardTitle: Lorum Ipsum
 author: River Gillis
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit commodo nisl, ut mollis libero. Aenean sed auctor massa. Integer accumsan nulla lorem, nec elementum enim fermentum eget. _Quisque nec neque in ligula tristique aliquet eu ac arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas._ Mauris quis sollicitudin turpis. Proin vestibulum, elit sed cursus sagittis, justo lorem pulvinar nunc, a sodales arcu orci non nunc.

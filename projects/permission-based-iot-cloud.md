@@ -2,6 +2,7 @@
 date: 2019-05-01T01:55:50.127Z
 author: River Gillis
 title: Permission Based IoT Cloud
+cardTitle: Permission Based IoT Cloud
 ---
 
 <!-- <iframe src="https://drive.google.com/file/d/1iqyfD8M-REWxq7X7f4kAhmxh3WAWzMIW/preview" width="900" height="700" frameborder="0" allowfullscreen title="Permissioned IoT Cloud Paper"></iframe> -->
