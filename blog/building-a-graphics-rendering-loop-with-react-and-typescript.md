@@ -8,9 +8,9 @@ verb: and-writes
 
 > My pixels have gone, my pixels have vanished! Perhaps they weren't even there to begin with. Won't someone teach me the orthopraxy?
 > 
-> &mdash; 16 seconds pre-coffee break. Subject: a frusterated coder.
+> &mdash; 16 seconds pre-coffee break. Subject: a frustrated coder.
 
-So you've decided to build a game or animation engine, and you're interested in rendering the whole thing in React, maybe even with TypeScript. After a few attempts, you've realized that building the rendering loop is trickier than you thought. Or at least, that was what happened to me as I was working on my [gameboy emulator](https://github.com/rivergillis/tsgb). After a little research, I've come to a solution that I'm happy with. Let's see how to get there.
+So you've decided to build a game or animation engine, and you're interested in rendering the whole thing in React, maybe even with TypeScript. After a few attempts, you've realized that building the rendering loop is trickier than you thought. Or at least, that was what happened to me as I was working on my [Game Boy emulator](https://github.com/rivergillis/tsgb). After a little research, I've come to a solution that I'm happy with. Let's see how to get there.
 
 The first thing we need is a way to get graphics onto the screen. For the purposes of this demonstration, we'll be generating our own `ImageData` and putting the pixels onto a canvas using `putImageData()`, though a similar structure could be used if you were to use WebGL. If you take a look at [Phil Nash's post on the subject](https://philna.sh/blog/2018/09/27/techniques-for-animating-on-the-canvas-in-react/), you'll learn how to go about rendering a canvas element in React the correct way. The first step is to create a component whose sole purpose to render a canvas to the DOM.
 
