@@ -40,7 +40,7 @@ export default function Template({
           <h6
             css={css`
               margin-top: ${rhythm(1 / 4)};
-              margin-bottom: ${rhythm(1 / 4)};
+              margin-bottom: ${rhythm(1)};
               color: #666;
             `}
           >
