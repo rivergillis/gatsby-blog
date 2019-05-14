@@ -39,3 +39,7 @@
 .gatsby-resp-image-link {
   background-image: none;
 }
+
+.language-text {
+  border-radius: 0em !important;
+}

@@ -15,8 +15,8 @@ export default ({ data }) => (
       `}
     />
     <b>River Gillis</b> is a software engineer with experience in embedded
-    systems, graphics, and full-stack web development. Right now he is finishing
-    up his degree before heading to work at Google. You can find him on{" "}
+    systems, graphics, and full-stack web development. He just finished up his
+    degree and will soon start work at Google 🎉. You can find him on{" "}
     <a href="https://twitter.com/rivergillis">Twitter</a>,{" "}
     <a href="https://github.com/rivergillis">GitHub</a>,{" "}
     <a href="https://www.instagram.com/therivergillis/">Instagram</a>, and

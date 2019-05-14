@@ -1,5 +1,5 @@
 ---
-date: 2019-05-09T01:26:14.876Z
+date: 2019-05-13T01:26:14.876Z
 title: Building a Graphics Rendering Loop with React and TypeScript
 cardTitle: Building a Graphics Rendering Loop
 author: River Gillis
@@ -8,7 +8,7 @@ verb: and-writes
 
 > My pixels have gone, my pixels have vanished! Perhaps they weren't even there to begin with. Won't someone teach me the orthopraxy?
 > 
-> &mdash; 16 seconds pre-coffee break. Subject: a frustrated coder.
+> &mdash; Recorded 16 seconds pre-coffee break. Subject: a frustrated coder.
 
 So you've decided to build a game or animation engine, and you're interested in rendering the whole thing in React, maybe even with TypeScript. After a few attempts, you've realized that building the rendering loop is trickier than you thought. Or at least, that was what happened to me as I was working on my [Game Boy emulator](https://github.com/rivergillis/tsgb). After a little research, I've come to a solution that I'm happy with. Let's see how to get there.
 
@@ -92,9 +92,9 @@ class GraphicsRenderer extends Component<any, GraphicsRendererState> {
 }
 ```
 
-Alright let's walk through this. First, the context. `GraphicsRenderer::render()` returns only the `PureCanvas` described earlier, and for the `contextRef` function, we pass in a function to wrap the `CanvasRenderingContext2D` into the state of `GraphicsRenderer`. We're doing this through the use of an `Engine` class, which acts as your game or animation engine. When we initialize `GraphicsRenderer`, we don't have any canvas context and so `engine` is `null`. To allow for this this, in `GraphicsRendererState` we use [union types](https://www.typescriptlang.org/docs/handbook/advanced-types.html) to allow `engine` to be nullable.  
+Let's walk through this! First, the context. `GraphicsRenderer::render()` returns only the `PureCanvas` described earlier, and for the `contextRef` function, we pass in a function to wrap the `CanvasRenderingContext2D` into the state of `GraphicsRenderer`. We're doing this through the use of an `Engine` class, which acts as your game or animation engine. When we initialize `GraphicsRenderer`, we don't have any canvas context and so `engine` is `null`. To allow for this this, in `GraphicsRendererState` we use [union types](https://www.typescriptlang.org/docs/handbook/advanced-types.html) to tell TypeScript that we want `engine` to be nullable.  
 
-So that takes care of wrapping the canvas context, how do we actually set up our frame loop? In `GraphicsRenderer`, we do that through the use of `requestAnimationFrame()`. If you've done graphics programming before, this function is like a wait frame function or an acquire frame function, depending on the API. What that means is that `requestAnimationFrame()` is an incredibly useful function that handles the work of synchronizing code to the refresh rate of the browser (60Hz). It's pretty simple too, you pass it a callback to execute and it returns a unique ID to let you cancel any requests later. It's important to note that this isn't called on an interval, you have to call `requestAnimationFrame()` again on every callback. This allows it work just fine even if your game can't hit 60fps.  
+So that takes care of wrapping the canvas context, how do we actually set up our frame loop? In `GraphicsRenderer`, we do that through the use of `requestAnimationFrame()`. If you've done graphics programming before, this function is sort of like a wait frame function or an acquire frame function, depending on the API. What that means is that `requestAnimationFrame()` is an incredibly useful function that handles the work of synchronizing code to the refresh rate of the browser (60Hz). It's pretty simple too, you pass it a callback to execute and it returns a unique ID to let you cancel any requests later. It's important to note that this isn't called on an interval, you have to call `requestAnimationFrame()` again on every callback. This allows it work just fine even if your game can't hit 60fps.  
 
 In our `updateAnimationState()` callback, we tick the engine (computing an image to draw) and request another frame, setting the component state to that frame ID. This `setState()` call is useful, as it will trigger a component update, giving us a chance to actually draw the image. Since we've been keeping track of the frame request ID, let's make sure to cancel any outbound request whenever we unmount the component. We do this with `cancelAnimationFrame()`.  
 
@@ -130,11 +130,11 @@ class Engine {
 }
 ```
 
-This will render a square that slowly becomes lighter every tick. Now for the moment of truth, the performance. We can test for this by running a system trace right within the chrome devtools.
+This will render a square that slowly becomes lighter every tick. Now for the moment of truth, the performance. We can test for this by running a system trace right within the Chrome DevTools.
 
 ![Performance using setState](/assets/rafUsingSetState.png "Performance using setState")
 
-The target frame time for 60fps is 16.7ms, and it looks like we're hitting that easily! But something stands out in this trace, the `setState()` calls. Every frame, we're spending a little over 2ms just on `setState()`! That time will become extremely valuable as you flesh out your engine. We need to fix this.  
+The target frame time for 60fps is 16.7ms, and it looks like we're hitting that! But something stands out in this trace, the `setState()` calls. Every frame, we're spending a little over 2ms just on `setState()`! That time will become extremely valuable as you flesh out your engine. We need to fix this.  
 
 So let's take a look at how we're actually using `setState()`. Since `PureCanvas` never updates, we're only using it in `GraphicsRenderer`. Even then, we're really only changing the state to account for the animation frame ID updates, and we're only using those so that we can cancel requests once the component unmounts! Let's see if we can get by without it.
 
@@ -196,7 +196,9 @@ updateAnimationState = () => {
 };
 ```
 
-Now it doesn't matter how long the tick lasts, because the actual drawing will be synchronized to the start of every frame! There are some additional things you could do to improve this. Ideally, your tick function is running on a separate thread via a web worker, and it would be great if you had some way to double buffer your images, though these things are beyond the scope of this post. 
+Now it doesn't matter how long the tick lasts, because the actual drawing will be synchronized to the start of every frame! There are some additional things you could do to improve this. Ideally, your tick function is running on a separate thread via a web worker, and it would be great if you had some way to double buffer your images, though these things are beyond the scope of this post. The gist of it is that you always want to have something new to display on your animation frames, but you should have computed what to display beforehand.
+
+If you've read this far, you may have felt that what we're doing here flies in the face of React. We're altering the state of a component and displaying new visuals to the user without telling the framework, a big no-no. React is meant for building user interfaces, and graphics like the Canvas API or WebGL just don't fit into the framework. Rarely do we as developers ever compose just a single element in isolation. We weave together dozens of little elements to create a cohesive unit, and sometimes that means shoving things where they don't fit so well. You've got a React app, and you want high-performance graphics. Should you have to bend your graphics stack to fit the React philosophy, even if it means delivering a less performant element? Absolutely not. Go out there and make something fun, something inspiring, something useful. Writing beautiful code is fun, but creating beautiful software is better.
 
 Hopefully this helped you along! If you want to reach out with suggestions or corrections, feel free to [email me](mailto:jrivergillis@gmail.com).
 

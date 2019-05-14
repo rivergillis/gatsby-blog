@@ -110,7 +110,12 @@ module.exports = {
               yMargin: 24, // Edge margin used when y value is not set
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              noInlineHighlight: false,
+            },
+          },
           `gatsby-remark-responsive-iframe`,
           {
             resolve: `gatsby-remark-relative-images`,
