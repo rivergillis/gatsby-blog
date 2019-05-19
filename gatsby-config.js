@@ -3,7 +3,7 @@ const path = require(`path`)
 module.exports = {
   siteMetadata: {
     title: `River's Blog`,
-    description: `A collection of River's projects and blog posts`,
+    description: `River's site - projects, fun stuff, and blog posts`,
     author: `River Gillis`,
     siteUrl: "https://river.codes",
   },
