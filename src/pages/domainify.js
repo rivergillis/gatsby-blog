@@ -14,10 +14,15 @@ class NameToUrl extends Component {
 
   // sample name: rivuno should match .uno and .no
   computeDomains = name => {
+    name = name
+      .split(" ")
+      .join("")
+      .toLowerCase()
     const results = []
     if (name.length <= 1) {
       return results
     }
+
     // Try to match against each tld
     tlds.forEach(tld => {
       if (tld.length >= name.length) {
